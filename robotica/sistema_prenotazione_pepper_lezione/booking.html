@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Prenotazione</title>
+</head>
+<body>
+<!-- Titolo della pagina -->
+<h1>Prenota il tuo appuntamento con Pepper</h1>
+<!-- Form per la prenotazione -->
+<form id="bookingForm">
+    <!-- Campo per inserire il nome -->
+    <label for="name">Nome:</label>
+    <input type="text" id="name" name="name" required><br><br>
+    <!-- Campo per selezionare la data -->
+    <label for="date">Data:</label>
+    <input type="date" id="date" name="date" required><br><br>
+    <!-- Campo per selezionare l'ora -->
+    <label for="time">Ora:</label>
+    <input type="time" id="time" name="time" required><br><br>
+    <!-- Pulsante per inviare il form -->
+    <button type="button" onclick="submitBooking()">Invia Prenotazione</button>
+</form>
+
+<!-- JavaScript per gestire l'invio del form -->
+<script>
+function submitBooking() {
+    // Raccolta dei dati dal form
+    var formData = {
+        name: document.getElementById('name').value,
+        date: document.getElementById('date').value,
+        time: document.getElementById('time').value
+    };
+    
+    // Invio dei dati al server tramite POST
+    fetch('http://pepper.local/booking', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+    })
+    .then(response => response.json()) // Conversione della risposta in JSON
+    .then(data => alert("Prenotazione inviata!")) // Conferma di successo
+    .catch(error => console.error('Errore nella prenotazione:', error)); // Gestione degli errori
+}
+</script>
+
+</body>
+</html>
