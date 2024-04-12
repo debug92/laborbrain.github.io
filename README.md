@@ -9,5 +9,3 @@ Invitiamo la comunità di sviluppatori e appassionati di tecnologia a contribuir
 
 ## 🔗 Resta Connesso:
 Per rimanere aggiornato con gli ultimi post e sviluppi da LaborBrain, segui il nostro blog e connettiti con noi sui social media.
-
-Grazie per visitare e supportare LaborBrain – insieme possiamo fare la differenza!
